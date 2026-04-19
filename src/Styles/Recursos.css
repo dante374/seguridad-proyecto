@@ -1,0 +1,37 @@
+.tipo-video      { background-color: #fee2e2; color: #b91c1c; }
+.tipo-guía       { background-color: #dcfce7; color: #166534; }
+.tipo-enlace     { background-color: #dbeafe; color: #164e7a; }
+.tipo-herramienta { background-color: #fef3c7; color: #92400e; }
+
+
+.card-video      {transition: all 0.2s;}
+.tipo-guía       { transition: all 0.2s; }
+.tipo-enlace     { transition: all 0.2s; }
+.tipo-herramienta {transition: all 0.2s; }
+
+.card-video:hover      { border-color: #f87171; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.15); transform: translateY(-4px); }
+.card-guía:hover       { border-color: #10b981; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);  transform: translateY(-4px); }
+.card-enlace:hover     { border-color: #38bdf8; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);  transform: translateY(-4px); }
+.card-herramienta:hover { border-color: #f59e0b; box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);  transform: translateY(-4px);}
+
+.recursos-titulo{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.recursos{
+    padding: 3rem ;
+}
+.card-recurso{
+    padding: 15px;
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+}
+
+.recurso-tipo{
+    border-radius: 999px;
+    padding: 6px;
+}
+
+.recurso-titulo{
+    margin-bottom: 10px;
+}

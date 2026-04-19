@@ -1,0 +1,51 @@
+.riesgos-titulo{
+    text-align: center;
+}
+.columna{
+    display: flex;
+    justify-content: center;
+}
+.card{
+    width: 500px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #dbeafe;
+}
+
+.riesgo-icono{
+    margin-right: 8px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fee2e2;
+}
+.riesgo-nivel{
+    margin-left: 180px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+}
+
+.nivel-alto{
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.nivel-medio{
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+}
+.riesgo-card-titulo{
+    font-size: 1rem;
+    font-weight: 600;
+}
+.riesgo-desc{
+    margin-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+}
