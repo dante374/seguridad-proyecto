@@ -5,6 +5,8 @@ import Riesgos from './Riesgos'
 import Padres from './Padres'
 import Recursos from './Recursos'
 import Inicio from './Inicio'
+import Chat from './Chat'
+
 function Layout (){
     const navigate = useNavigate()
     return(
@@ -17,7 +19,7 @@ function Layout (){
                 <li><Link href="">Consejos</Link></li>
                 <li><Link to="/Padres">Padres y docentes</Link></li>
                 <li><Link to="/Recursos">Recursos</Link></li>
-                <li><Link href="">Contacto</Link></li>
+                <li><Link to="/Contacto">Contacto</Link></li>
             </ul>
         </div>
       </nav>

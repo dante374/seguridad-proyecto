@@ -9,11 +9,14 @@ import Inicio from './componentes/Inicio'
 import Riesgos from './componentes/Riesgos'
 import Padres from './componentes/Padres'
 import Recursos from './componentes/Recursos'
+import Chat from './componentes/Chat'
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <Chat />
     <Routes>
       <Route path='/' element={<Layout/>}>
        <Route path='Inicio' index element={<Inicio/>}/>
