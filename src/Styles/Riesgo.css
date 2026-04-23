@@ -1,6 +1,12 @@
 .riesgos-titulo{
+    margin-top: 20px;
     text-align: center;
 }
+
+.container{
+    margin-bottom: 30px;
+}
+
 .columna{
     display: flex;
     justify-content: center;
@@ -11,6 +17,13 @@
     display: flex;
     justify-content: center;
     background-color: #dbeafe;
+    box-shadow: 2px 2px 5px gray;
+    transition: 0.3s ease;
+}
+
+.card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0.5px 0.5px 5px gray;
 }
 
 .riesgo-icono{

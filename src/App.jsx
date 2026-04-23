@@ -9,6 +9,8 @@ import Inicio from './componentes/Inicio'
 import Riesgos from './componentes/Riesgos'
 import Padres from './componentes/Padres'
 import Recursos from './componentes/Recursos'
+import Consejos from './componentes/Consejos'
+import Contacto from './componentes/Contacto'
 import Chat from './componentes/Chat'
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
        <Route path='Riesgos' index element={<Riesgos/>}/>
        <Route path='Padres' index element={<Padres/>}/>
        <Route path='Recursos' index element={<Recursos/>}/>
+       <Route path='Consejos' index element={<Consejos/>}/>
+       <Route path='Contacto' index element={<Contacto/>}/>
       </Route>
     </Routes>
     </>

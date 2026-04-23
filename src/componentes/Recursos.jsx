@@ -52,7 +52,7 @@ function Recursos(){
                 <h2>Videos, guías y enlaces<br />para seguir aprendiendo</h2>
                 <p>Material seleccionado para distintas edades y niveles de conocimiento.</p>
              </div>
-            <div className="container">
+            <div className="recursos-container">
                 <div className="row g-4">
                     { recursos.map(item =>(
                         <div className="col 6">

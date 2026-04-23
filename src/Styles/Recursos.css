@@ -14,6 +14,13 @@
 .card-enlace:hover     { border-color: #38bdf8; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);  transform: translateY(-4px); }
 .card-herramienta:hover { border-color: #f59e0b; box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);  transform: translateY(-4px);}
 
+.recursos-container{
+    display: grid;
+    grid-template-columns: (1, 0.1fr); 
+    gap: 20px;
+    width: 100%;
+}
+
 .recursos-titulo{
     text-align: center;
     margin-bottom: 10px;
@@ -22,9 +29,15 @@
     padding: 3rem ;
 }
 .card-recurso{
-    padding: 15px;
+    flex: 1 1 calc(33.333% - 20px);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
     border: 1px solid #dbeafe;
-    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: auto;
+    height: 100%;
 }
 
 .recurso-tipo{
