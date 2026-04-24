@@ -21,7 +21,7 @@ function App() {
     <Chat />
     <Routes>
       <Route path='/' element={<Layout/>}>
-       <Route path='Inicio' index element={<Inicio/>}/>
+       <Route  index element={<Inicio/>}/>
        <Route path='Riesgos' index element={<Riesgos/>}/>
        <Route path='Padres' index element={<Padres/>}/>
        <Route path='Recursos' index element={<Recursos/>}/>

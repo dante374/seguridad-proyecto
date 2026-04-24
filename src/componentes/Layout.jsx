@@ -14,7 +14,7 @@ function Layout (){
     return(
      <>
       <nav className="Nav">
-        <h1><Link to="/Inicio">Navega <span>Seguro</span></Link></h1>
+        <Link className='titulo-nav' to="/"><h1>Navega <span>Seguro</span></h1></Link>
         <div className="listado">
             <ul className="links">
                 <li><Link to="/Riesgos">Riesgos</Link></li>

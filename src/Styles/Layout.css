@@ -5,11 +5,11 @@
     justify-content: space-between;
     padding: 5px;
 }
-.Nav h1 a{
+.titulo-nav{
     text-decoration: none;
-  color: #FFFF;
+    color: #FFFF;
 }
-.Nav h1 a span{
+.titulo-nav span{
     color: #38bdf8;
 }
 .Nav{
