@@ -1,19 +1,23 @@
 .Nav{
-    height: 65px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #F8F9FF;
 }
+
 .titulo-nav{
+    font-family: var(--font-main);
+    font-weight: var(--wht-b);
+    font-size: var(--txt);
     text-decoration: none;
-    color: #FFFF;
+    color: #000;
 }
+
 .titulo-nav span{
-    color: #38bdf8;
-}
-.Nav{
-    background-color: #164e7a;
+    color: #0D9488;
 }
 
 .links{
@@ -22,12 +26,12 @@
     list-style: none;
     padding: 0%;
     margin: 0%;
-    
+    margin-right: 100px;
 }
 .links li{
-    margin-right: 40px;
+    margin-right: 0px;
     padding: 5px;
-    transition: all 0.2s;
+    transition: all ease 0.3s;
     border: 3px solid transparent;
 }
 .links li a{
@@ -43,4 +47,24 @@
 }
 .links li:hover a{
     color: cyan;
+}
+
+.izquierda{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0%;
+    margin: 0%;
+    gap: 5px;
+}
+.izquierda li{
+    padding: 10px;
+}
+
+#contacto-boton a{
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #00685F;
 }
