@@ -1,9 +1,59 @@
-body {
-  font-family: var(--font-main);
-  font-size: var(--txt);
-  font-weight: var(--wht-r);
+:root {
+  /* Familias */
+  --font-pjs: 'PlusJakarta', sans-serif;
+  --font-lex: 'Lexend', sans-serif;
+  
+  /* Peso */
+  --pes-rg: 400;
+  --pes-md: 500;
+  --pes-sb: 600;
+  --pes-b: 700;
+  
+  /* Tamaños */
+  --txt-titulo: 36px; 
+  --txt-sub-titulo: 16px;
+  --txt-head-cartas: 20px;
+  --txt-encabezado: 14px;
+  --txt: 12px;
 }
+  
+  /* Plus Jakarta Sans */
+  @font-face { 
+    font-family: 'PlusJakarta';
+    src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf') format('truetype');
+    font-weight: 400; }
 
-h1, h2, h3 {
-  font-family: var(--font-accent);
+  @font-face {
+    font-family: 'PlusJakarta';
+    src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf') format('truetype');
+    font-weight: 500; }
+
+  @font-face { 
+    font-family: 'PlusJakarta'; 
+    src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf') format('truetype');
+    font-weight: 600; }
+
+  @font-face { 
+    font-family: 'PlusJakarta'; 
+    src: url('./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf') format('truetype');
+    font-weight: 700; }
+
+  /* Lexend */
+  @font-face { 
+    font-family: 'Lexend'; 
+    src: url('./assets/fonts/Lexend/static/Lexend-Regular.ttf') format('truetype'); 
+    font-weight: 400; }
+
+  @font-face { 
+    font-family: 'Lexend'; 
+    src: url('./assets/fonts/Lexend/static/Lexend-SemiBold.ttf') format('truetype'); 
+    font-weight: 600; }
+
+  @font-face { 
+    font-family: 'Lexend'; 
+    src: url('./assets/fonts/Lexend/static/Lexend-Bold.ttf') format('truetype'); 
+    font-weight: 700; }
+    
+body {
+  font-family: var(--font-pjs) !important;
 }

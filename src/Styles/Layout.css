@@ -5,15 +5,19 @@
     justify-content: space-between;
     padding: 10px;
     background-color: #FFFFFF;
-    border-bottom: 1px solid #F8F9FF;
+    border-bottom: 4px solid #F8F9FF;
 }
 
 .titulo-nav{
-    font-family: var(--font-main);
-    font-weight: var(--wht-b);
-    font-size: var(--txt);
     text-decoration: none;
     color: #000;
+}
+
+.titulo-nav h1{
+    font-family: var(--font-pjs); 
+    font-weight: var(--pes-b);
+    font-size: var(--txt-titulo);
+    letter-spacing: -0.6px;
 }
 
 .titulo-nav span{
@@ -26,27 +30,37 @@
     list-style: none;
     padding: 0%;
     margin: 0%;
-    margin-right: 100px;
-}
-.links li{
-    margin-right: 0px;
-    padding: 5px;
-    transition: all ease 0.3s;
-    border: 3px solid transparent;
-}
-.links li a{
-    color: gray;
-    font-size: 19px; font-weight: 400;
-    text-decoration: none;
-    transition: all 0.2s;
 }
 
-.links li:hover{
-    border: 3px solid rgba(0, 213, 255, 0.263);
-    border-radius: 5px;
+.links li{
+    margin-right: 0px;
+    
+    transition: all 0.3s ease;
 }
-.links li:hover a{
-    color: cyan;
+.links li a {
+    font-family: var(--font-pjs);
+    font-weight: var(--pes-md);
+    font-size: var(--txt-sub-titulo);
+    color: gray;
+    text-decoration: none;
+    padding: 29px 10px;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.links li a:hover {
+    color: #0D9488;
+    transition: all 0.3s ease;
+}
+.links li:hover{
+    color: #0D9488;
+    transition: all 0.3s ease;
+}
+
+.links li a.active{
+    color: #0D9488;
+    border-bottom: 3px solid #0D9488;
+    transition: all 0.3s ease;
 }
 
 .izquierda{
@@ -62,6 +76,9 @@
 }
 
 #contacto-boton a{
+    font-family: var(--font-pjs);
+    font-weight: var(--pes-rg);
+    font-size: var(--txt-encabezado);
     color: #FFFFFF;
     text-decoration: none;
     padding: 10px;
