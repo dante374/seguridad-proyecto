@@ -10,11 +10,17 @@
   --pes-b: 700;
   
   /* Tamaños */
+  --txt-impacto: 48px;
   --txt-titulo: 36px; 
   --txt-sub-titulo: 16px;
   --txt-head-cartas: 20px;
   --txt-encabezado: 14px;
   --txt: 12px;
+
+  /* Colores */
+  --verde-badge: #00685F;
+  --verde-texto: #0D9488;
+
 }
   
   /* Plus Jakarta Sans */

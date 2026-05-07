@@ -15,22 +15,24 @@ function Layout (){
     return(
      <>
       <nav className="Nav">
-        <NavLink className='titulo-nav' to="/"><h1>Navegar<span>Seguro</span></h1></NavLink>
-        <div className="listado">
-            <ul className="links">
-                <li><NavLink to="/">Inicio</NavLink></li>
-                <li><NavLink to="/Riesgos">Riesgos de internet</NavLink></li>
-                <li><NavLink to="/Consejos">Consejos</NavLink></li>
-                <li><NavLink to="/Padres">Padres y docentes</NavLink></li>
-                <li><NavLink to="/Recursos">Recursos</NavLink></li>
-            </ul>
-        </div>
-        <div>
-            <ul className='izquierda'>
-                <li><FaRegMoon /></li>
-                <li id='contacto-boton'><NavLink to="/Contacto">Contacto</NavLink></li>
-            </ul>
-            
+        <div className='contenido'>
+            <NavLink className='titulo-nav' to="/"><h1>Navegar<span>Seguro</span></h1></NavLink>
+            <div className="listado">
+                <ul className="links">
+                    <li><NavLink to="/">Inicio</NavLink></li>
+                    <li><NavLink to="/Riesgos">Riesgos de internet</NavLink></li>
+                    <li><NavLink to="/Consejos">Consejos</NavLink></li>
+                    <li><NavLink to="/Padres">Padres y docentes</NavLink></li>
+                    <li><NavLink to="/Recursos">Recursos</NavLink></li>
+                </ul>
+            </div>
+            <div>
+                <ul className='izquierda'>
+                    <li><FaRegMoon /></li>
+                    <li id='contacto-boton'><NavLink to="/Contacto">Contacto</NavLink></li>
+                </ul>
+                
+            </div>
         </div>
       </nav>
       <Outlet/>
