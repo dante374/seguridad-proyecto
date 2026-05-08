@@ -13,21 +13,25 @@ export default function Recursos() {
             title: "Seguridad digital general",
             desc: "Aprendé conceptos clave sobre la privacidad y las configuraciones básicas en las redes.",
             link: "https://www.youtube.com/watch?v=UHREmmkbrvM",
+            id: "UHREmmkbrvM",
         },
         {
             title: "Phishing ¿Qué es?",
             desc: "Conocé uno de los riesgos más comunes de internet y cómo prevenirlo.",
             link: "https://www.youtube.com/watch?v=XXUgt-Z8uZk",
+            id: "XXUgt-Z8uZk",
         },
         {
             title: "Ciberseguridad: El objetivo sos vos",
             desc: "Además de internet, las amenazas están en todos lados, conocelas y prevenilas.",
             link: "https://www.youtube.com/watch?v=ByrLPojJYzM",
+            id: "ByrLPojJYzM",
         },
         {
             title: "Suplantación de identidad",
             desc: "Cómo evitar las estafas y el robo de nuestros datos por parte de los ciberdelincuentes.",
             link: "https://www.youtube.com/watch?v=qkpQMddCrrk",
+            id: "qkpQMddCrrk",
         },
     ];
 
@@ -123,7 +127,16 @@ export default function Recursos() {
                                 rel="noopener noreferrer"
                                 className="video-card"
                             >
-                                <div className="video-preview"></div>
+                                <div className="video-preview">
+                                    <img
+                                        src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
+                                        alt={item.title}
+                                    />
+
+                                    <div className="play-overlay">
+                                        <PlayCircle size={60} />
+                                    </div>
+                                </div>
 
                                 <div className="video-content">
                                     <h4>{item.title}</h4>
