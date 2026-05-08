@@ -1,102 +1,102 @@
-.Nav{
+* {
+    transition: all 0.3s ease;
+}
+
+.navbar {
     height: 70px;
     background-color: #FFFFFF;
     border-bottom: 2px solid #F8F9FF;
-}
-
-.contenido{
-    margin: 0px 15px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
 }
 
-.titulo-nav{
+.titulo-nav {
     text-decoration: none;
     color: #000;
 }
 
-.titulo-nav h1{
-    font-family: var(--font-pjs); 
+.titulo-nav h1 {
+    font-family: var(--font-pjs);
     font-weight: var(--pes-b);
     font-size: var(--txt-titulo);
     letter-spacing: -0.6px;
+    margin: 0;
 }
 
-.titulo-nav span{
+.titulo-nav span {
     color: #0D9488;
 }
 
-.links{
+.links {
     display: flex;
-    align-items: center;
+    gap: 30px;
     list-style: none;
-    padding: 0%;
-    margin: 0%;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 70px;
 }
 
-.links li{
-    margin-right: 0px;
-    
-    transition: all 0.3s ease;
+.links li {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
+
 .links li a {
     font-family: var(--font-pjs);
     font-weight: var(--pes-md);
     font-size: var(--txt-encabezado);
     color: gray;
     text-decoration: none;
-    padding: 19px 10px;
-    transition: all 0.3s ease;
+    display: inline-block;
+    padding-bottom: 3px;
     border-bottom: 3px solid transparent;
 }
 
 .links li a:hover {
     color: #0D9488;
-    transition: all 0.3s ease;
-}
-.links li:hover{
-    color: #0D9488;
-    transition: all 0.3s ease;
 }
 
-.links li a.active{
+.links li a.active {
     color: #0D9488;
     border-bottom: 3px solid #0D9488;
-    transition: all 0.3s ease;
 }
 
-.izquierda{
+.nav-derecha {
     display: flex;
     align-items: center;
-    list-style: none;
     gap: 15px;
 }
 
-#contacto-boton a{
+.btn-moon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #555;
+    padding: 4px;
+}
+
+.btn-moon:hover {
+    color: #0D9488;
+}
+
+#contacto-boton {
     font-family: var(--font-pjs);
     font-weight: var(--pes-rg);
     font-size: var(--txt-encabezado);
     color: #FFFFFF;
     text-decoration: none;
-    padding: 10px;
+    padding: 10px 16px;
     border-radius: 8px;
     background-color: #00685F;
 }
-.contenedor-tarjetas {
-    display: flex;        
-    gap: 20px;            
-    justify-content: center;
-    flex-wrap: wrap;      
-    padding: 20px;
-}
 
-.tarjeta {
-    flex: 1;              
-    min-width: 300px;     
-    max-width: 400px;     
-    border-radius: 15px;  
-    padding: 20px;
-    margin: 0%;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+#contacto-boton:hover {
+    background-color: #0D9488;
 }

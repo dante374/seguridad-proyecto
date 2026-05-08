@@ -1,6 +1,8 @@
 import '../Styles/Inicio.css'
 import { LuBadgeCheck } from "react-icons/lu";
 import { TbAlertOctagonFilled } from "react-icons/tb";
+import { FaArrowRight } from "react-icons/fa";
+import ContenedorTarjetas from '../componentes/Tarjetas'
 import { Link } from 'react-router-dom'
 
 function Inicio(){
@@ -33,27 +35,6 @@ function Inicio(){
             </div>
         </div>
 
-        <div className='contenedor-tarjetas'>
-            <div className='tarjeta roja'>
-                <div className='badge rojo'>
-                    <TbAlertOctagonFilled />
-                    <p>CONSEJOS PRÁCTICOS</p>
-                </div>
-                <div className='cuerpo'>
-                    <div className='title'>
-                        <p>Riesgos reales de la web</p>
-                    </div>
-                    <div className='texto'>
-                        <p>Aprende a identificar el acoso, a tomar medidas, a bloquear a los usuarios tóxicos y a encontrar apoyo cuando tú o un amigo sean víctimas de acoso en línea.</p>
-                    </div>
-                </div>
-                <div className='pie'>
-
-                </div>
-            </div>
-            <div className='tarjeta azul'></div>
-            <div className='tarjeta blanca'></div>
-        </div>
         </>
     )
 }
