@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { TbAlertOctagonFilled } from "react-icons/tb"
-import { FaShieldAlt } from "react-icons/fa"        // ejemplo para las otras tarjetas
-import { MdMenuBook } from "react-icons/md"          // ejemplo para las otras tarjetas
+import { MdFamilyRestroom } from "react-icons/md";        // ejemplo para las otras tarjetas
+import { FaListCheck } from "react-icons/fa6";
 import Tarjeta from './Tarjeta'
 import '../Styles/Tarjetas.css'
 
@@ -17,19 +17,19 @@ const tarjetas = [
   },
   {
     variante: 'azul',
-    Icono: FaShieldAlt,
-    etiqueta: 'PROTECCIÓN',
-    titulo: 'Título tarjeta azul',
-    texto: 'Descripción de la tarjeta azul.',
-    linkTexto: 'Ver consejos',
+    Icono: MdFamilyRestroom,
+    etiqueta: 'HERRAMIENTAS',
+    titulo: 'Para padres y docentes',
+    texto: 'Ayudas, temas de conversación y herramientas para guiar a los más jóvenes en el mundo digital.',
+    linkTexto: 'Ver herramientas',
     linkTo: '/Consejos',
   },
   {
     variante: 'blanca',
-    Icono: MdMenuBook,
+    Icono: FaListCheck,
     etiqueta: 'RECURSOS',
-    titulo: 'Título tarjeta blanca',
-    texto: 'Descripción de la tarjeta blanca.',
+    titulo: 'Para niños y adolescentes',
+    texto: 'Videos, consejos y tutoriales para navegar de manera más cómoda y segura por internet.',
     linkTexto: 'Ver recursos',
     linkTo: '/Recursos',
   },

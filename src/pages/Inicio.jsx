@@ -2,7 +2,7 @@ import '../Styles/Inicio.css'
 import { LuBadgeCheck } from "react-icons/lu";
 import { TbAlertOctagonFilled } from "react-icons/tb";
 import { FaArrowRight } from "react-icons/fa";
-import ContenedorTarjetas from '../componentes/Tarjetas'
+import Tarjetas from '../componentes/Tarjetas'
 import { Link } from 'react-router-dom'
 
 function Inicio(){
@@ -34,7 +34,7 @@ function Inicio(){
                 <img src="/img/Estudiante.png" alt="Imagen de estudiante" />
             </div>
         </div>
-
+        <Tarjetas />
         </>
     )
 }
