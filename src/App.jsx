@@ -11,6 +11,7 @@ import Padres from './pages/Padres'
 import Recursos from './pages/Recursos'
 import Consejos from './pages/Consejos'
 import Contacto from './pages/Contacto'
+import Encuesta from './pages/Encuesta'
 import Chat from './componentes/Chat'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
        <Route path='Recursos' index element={<Recursos/>}/>
        <Route path='Consejos' index element={<Consejos/>}/>
        <Route path='Contacto' index element={<Contacto/>}/>
+       <Route path='Encuesta' index element={<Encuesta/>}/>
       </Route>
     </Routes>
     </>

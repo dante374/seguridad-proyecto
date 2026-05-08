@@ -1,0 +1,294 @@
+/* internet-risks.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+.internet-page {
+    width: 100%;
+    padding: 32px 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.internet-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.top-badge {
+    width: fit-content;
+    margin: 0 auto 18px;
+    background: #e7f8f2;
+    color: #0c8a67;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+}
+
+.internet-container h1 {
+    text-align: center;
+    font-size: 52px;
+    line-height: 1.1;
+    margin: 0;
+    font-weight: 800;
+}
+
+.subtitle {
+    text-align: center;
+    max-width: 760px;
+    margin: 20px auto 40px;
+    color: #6b7280;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+/* TOP GRID */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.risk-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.card-header.red {
+    background: #fde8e8;
+    color: #b42318;
+}
+
+.card-header.blue {
+    background: #e6f0ff;
+    color: #1d4ed8;
+}
+
+.card-header.purple {
+    background: #f0e8ff;
+    color: #7c3aed;
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.card-body h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.card-body p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.action-box {
+    margin-top: 18px;
+    background: #f1f8ff;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.action-box h5 {
+    margin: 0 0 8px;
+    color: #0ea5e9;
+    font-size: 14px;
+}
+
+/* BOTTOM GRID */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 28px;
+}
+
+.big-card {
+    overflow: hidden;
+    border-radius: 22px;
+    background: white;
+    border: 1px solid #e5e7eb;
+}
+
+.big-top {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.big-top svg {
+    stroke-width: 1.8;
+}
+
+.blue-soft {
+    background: #dcecf8;
+    color: #0f766e;
+}
+
+.beige-soft {
+    background: #f6ede7;
+    color: #d97706;
+}
+
+.big-content {
+    padding: 24px;
+}
+
+.big-content h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.big-content p {
+    color: #4b5563;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.warning-box {
+    margin-top: 22px;
+    background: #fff2f2;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.warning-box strong {
+    color: #dc2626;
+}
+
+.warning-box.orange {
+    background: #fff6ed;
+}
+
+.warning-box.orange strong {
+    color: #ea580c;
+}
+
+/* HELP SECTION */
+
+.help-section {
+    background: #00897b;
+    color: white;
+    border-radius: 22px;
+    padding: 54px 24px;
+    text-align: center;
+}
+
+.help-section h2 {
+    font-size: 42px;
+    margin: 16px 0;
+}
+
+.help-section p {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+
+.help-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary-btn {
+    background: white;
+    color: #00897b;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .cards-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .internet-container h1 {
+        font-size: 40px;
+    }
+
+    .help-section h2 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 600px) {
+    .internet-container h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .big-content h3 {
+        font-size: 24px;
+    }
+
+    .help-section {
+        padding: 40px 20px;
+    }
+}

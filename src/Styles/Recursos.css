@@ -1,50 +1,289 @@
-.tipo-video      { background-color: #fee2e2; color: #b91c1c; }
-.tipo-guía       { background-color: #dcfce7; color: #166534; }
-.tipo-enlace     { background-color: #dbeafe; color: #164e7a; }
-.tipo-herramienta { background-color: #fef3c7; color: #92400e; }
+/* Recursos.css */
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-.card-video      {transition: all 0.2s;}
-.tipo-guía       { transition: all 0.2s; }
-.tipo-enlace     { transition: all 0.2s; }
-.tipo-herramienta {transition: all 0.2s; }
-
-.card-video:hover      { border-color: #f87171; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.15); transform: translateY(-4px); }
-.card-guía:hover       { border-color: #10b981; box-shadow: 0 8px 24px rgba(16, 185, 129, 0.15);  transform: translateY(-4px); }
-.card-enlace:hover     { border-color: #38bdf8; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.15);  transform: translateY(-4px); }
-.card-herramienta:hover { border-color: #f59e0b; box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);  transform: translateY(-4px);}
-
-.recursos-container{
-    display: grid;
-    grid-template-columns: (1, 0.1fr); 
-    gap: 20px;
-    width: 100%;
+* {
+    box-sizing: border-box;
 }
 
-.recursos-titulo{
-    text-align: center;
-    margin-bottom: 10px;
+body {
+    margin: 0;
+    background: #f3f4f6;
+    font-family: "Inter", sans-serif;
 }
-.recursos{
-    padding: 3rem ;
-}
-.card-recurso{
-    flex: 1 1 calc(33.333% - 20px);
+
+.recursos-page {
+    padding: 40px 16px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+}
+
+.recursos-container {
+    width: 100%;
+    max-width: 1250px;
+}
+
+.recursos-container h1 {
+    text-align: center;
+    font-size: 54px;
+    margin: 0;
+    font-weight: 800;
+}
+
+.recursos-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin: 18px auto 42px;
+    line-height: 1.7;
+    max-width: 760px;
+}
+
+/* SECTION */
+
+.resource-section {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 22px;
+    position: relative;
+    border-bottom: 4px solid #e5e7eb;
+}
+
+.section-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.section-header.red {
+    background: #c81e1e;
+}
+
+.section-header.orange {
+    background: #f97316;
+}
+
+.section-header.green {
+    background: #0f9d8a;
+}
+
+.section-header.purple {
+    background: #7c3aed;
+}
+
+.see-all {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    color: #0f9d8a;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* VIDEO CARDS */
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.video-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+.video-preview {
+    background: black;
+    height: 120px;
+}
+
+.video-content {
+    padding: 12px;
+}
+
+.video-content h4 {
+    margin: 0 0 8px;
+    font-size: 15px;
+}
+
+.video-content p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* SITIOS */
+
+.sites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.site-card {
+    background: #f8e7d8;
+    border-radius: 14px;
+    padding: 28px 20px;
+    text-align: center;
+}
+
+.site-card h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 0;
+}
+
+.site-card p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* GUIAS */
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.guide-card {
+    background: #dff1ef;
+    border-radius: 14px;
     padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #dbeafe;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    margin-top: auto;
-    height: 100%;
 }
 
-.recurso-tipo{
-    border-radius: 999px;
-    padding: 6px;
+.guide-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
-.recurso-titulo{
-    margin-bottom: 10px;
+.guide-card small {
+    color: #6b7280;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.guide-card p {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* BOTTOM */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 18px;
+}
+
+.organizations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.org-card {
+    background: #ece3fb;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.org-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 0;
+}
+
+.org-card p {
+    color: #6b7280;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* HELP CARD */
+
+.help-card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    border-left: 4px solid #7c3aed;
+}
+
+.help-title {
+    background: #7c3aed;
+    color: white;
+    font-weight: 700;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.help-card ul {
+    padding-left: 18px;
+    color: #4b5563;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .videos-grid,
+    .sites-grid,
+    .guides-grid,
+    .organizations-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recursos-container h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .recursos-container h1 {
+        font-size: 32px;
+    }
+
+    .recursos-subtitle {
+        font-size: 15px;
+    }
+}
+
+.video-card,
+.site-card,
+.guide-card,
+.org-card {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.video-card:hover,
+.site-card:hover,
+.guide-card:hover,
+.org-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }

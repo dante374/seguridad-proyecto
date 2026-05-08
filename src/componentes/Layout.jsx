@@ -1,41 +1,168 @@
-import { Link, Outlet } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
-import '../Styles/Layout.css'
-import Riesgos from '../pages/Riesgos'
-import Padres from '../pages/Padres'
-import Recursos from '../pages/Recursos'
-import Inicio from '../pages/Inicio'
-import Chat from './Chat'
-import Contacto from '../pages/Contacto'
-import { FaRegMoon } from "react-icons/fa";
+// Layout.jsx
 
-function Layout (){
-    const navigate = useNavigate()
-    return(
-     <>
+import { Outlet, NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import "../Styles/Layout.css";
+
+import {
+  FaRegMoon,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+
+import { MdLightMode } from "react-icons/md";
+
+function Layout() {
+  const [menuAbierto, setMenuAbierto] = useState(false);
+
+  // MODO OSCURO
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true"
+  );
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+
+    localStorage.setItem("darkMode", darkMode);
+  }, [darkMode]);
+
+  const cerrarMenu = () => {
+    setMenuAbierto(false);
+  };
+
+  return (
+    <>
       <nav className="navbar">
+        {/* IZQUIERDA */}
+        <div className="nav-izquierda">
+          <NavLink className="titulo-nav" to="/">
+            <h1>
+              Navegar<span>Seguro</span>
+            </h1>
+          </NavLink>
+        </div>
 
-        <div className='nav-izquierda'>
-            <NavLink className='titulo-nav' to="/"><h1>Navegar<span>Seguro</span></h1></NavLink>
+        {/* CENTRO */}
+        <div
+          className={`nav-centro ${
+            menuAbierto ? "activo" : ""
+          }`}
+        >
+          <ul className="links">
+            <li>
+              <NavLink
+                onClick={cerrarMenu}
+                to="/"
+              >
+                Inicio
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                onClick={cerrarMenu}
+                to="/Riesgos"
+              >
+                Riesgos de internet
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                onClick={cerrarMenu}
+                to="/Consejos"
+              >
+                Consejos
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                onClick={cerrarMenu}
+                to="/Padres"
+              >
+                Padres y docentes
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                onClick={cerrarMenu}
+                to="/Recursos"
+              >
+                Recursos
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink
+                onClick={cerrarMenu}
+                to="/Encuesta"
+              >
+                Encuesta
+              </NavLink>
+            </li>
+
+            {/* CONTACTO MOBILE */}
+            <li className="mobile-contacto">
+              <NavLink
+                onClick={cerrarMenu}
+                to="/Contacto"
+              >
+                Contacto
+              </NavLink>
+            </li>
+          </ul>
         </div>
-        <div className="nav-centro">
-            <ul className="links">
-                <li><NavLink to="/">Inicio</NavLink></li>
-                <li><NavLink to="/Riesgos">Riesgos de internet</NavLink></li>
-                <li><NavLink to="/Consejos">Consejos</NavLink></li>
-                <li><NavLink to="/Padres">Padres y docentes</NavLink></li>
-                <li><NavLink to="/Recursos">Recursos</NavLink></li>
-            </ul>
-        </div>
-       <div className='nav-derecha'>
-            <button className='btn-moon'><FaRegMoon /></button>
-            <NavLink id='contacto-boton' to="/Contacto">Contacto</NavLink>
+
+        {/* DERECHA */}
+        <div className="nav-derecha">
+          {/* DARK MODE */}
+          <button
+            className="btn-moon"
+            onClick={() =>
+              setDarkMode(!darkMode)
+            }
+          >
+            {darkMode ? (
+              <MdLightMode />
+            ) : (
+              <FaRegMoon />
+            )}
+          </button>
+
+          {/* CONTACTO */}
+          <NavLink
+            id="contacto-boton"
+            to="/Contacto"
+          >
+            Contacto
+          </NavLink>
+
+          {/* MENU MOBILE */}
+          <button
+            className="menu-btn"
+            onClick={() =>
+              setMenuAbierto(!menuAbierto)
+            }
+          >
+            {menuAbierto ? (
+              <FaTimes />
+            ) : (
+              <FaBars />
+            )}
+          </button>
         </div>
       </nav>
-      <Outlet/>
-     </>   
-    )
+
+      <Outlet />
+    </>
+  );
 }
 
-export default Layout
+export default Layout;

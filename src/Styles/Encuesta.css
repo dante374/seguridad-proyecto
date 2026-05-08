@@ -1,0 +1,263 @@
+/* Encuesta.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+.encuesta {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 18px;
+    font-family: "Inter", sans-serif;
+}
+
+/* HEADER */
+
+.encuesta-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.encuesta-badge {
+    width: fit-content;
+    margin: 0 auto 18px;
+    background: #dff5ef;
+    color: #047857;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.encuesta-header h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    margin: 0;
+    font-weight: 800;
+    color: #111827;
+}
+
+.encuesta-header p {
+    max-width: 760px;
+    margin: 20px auto 0;
+    color: #6b7280;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* PREGUNTAS */
+
+.preguntas-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.pregunta-card {
+    background: white;
+    border-radius: 24px;
+    padding: 28px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+}
+
+.pregunta-top {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.pregunta-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: #ecfeff;
+    color: #0d9488;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.pregunta-top h2 {
+    margin: 0;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    color: #1f2937;
+}
+
+/* OPCIONES */
+
+.opciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.opcion {
+    border: 1px solid #d1d5db;
+    background: white;
+    padding: 14px 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.opcion:hover {
+    border-color: #14b8a6;
+    transform: translateY(-2px);
+}
+
+.opcion.selected {
+    background: linear-gradient(135deg, #0d9488, #14b8a6);
+    color: white;
+    border-color: transparent;
+}
+
+/* BOTON */
+
+.resultado-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.resultado-btn {
+    background: linear-gradient(135deg, #0d9488, #14b8a6);
+    color: white;
+    border: none;
+    padding: 16px 30px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.resultado-btn:hover {
+    transform: translateY(-3px);
+}
+
+.resultado-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* RESULTADO */
+
+.resultado-card {
+    margin-top: 40px;
+    border-radius: 28px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.resultado-card.green {
+    background: linear-gradient(135deg, #047857, #10b981);
+}
+
+.resultado-card.yellow {
+    background: linear-gradient(135deg, #ca8a04, #facc15);
+}
+
+.resultado-card.red {
+    background: linear-gradient(135deg, #b91c1c, #ef4444);
+}
+
+.resultado-icon {
+    margin-bottom: 18px;
+}
+
+.resultado-card h2 {
+    margin: 0 0 14px;
+    font-size: 2rem;
+}
+
+.resultado-card p {
+    margin: 0 auto 24px;
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+.resultado-bar {
+    width: 100%;
+    max-width: 700px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.resultado-fill {
+    height: 100%;
+    background: white;
+    border-radius: 999px;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 768px) {
+    .pregunta-card {
+        padding: 22px;
+    }
+
+    .pregunta-top {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .pregunta-top h2 {
+        font-size: 1.2rem;
+    }
+
+    .opciones {
+        flex-direction: column;
+    }
+
+    .opcion {
+        width: 100%;
+    }
+
+    .resultado-card {
+        padding: 30px 20px;
+    }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 500px) {
+    .encuesta {
+        padding: 35px 14px;
+    }
+
+    .encuesta-header p {
+        font-size: 0.95rem;
+    }
+
+    .pregunta-top h2 {
+        font-size: 1.05rem;
+    }
+
+    .resultado-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .resultado-card p {
+        font-size: 0.95rem;
+    }
+}

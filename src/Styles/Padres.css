@@ -1,37 +1,193 @@
-*{
-    transition: 0.3s ease;
+/* PadresDocentes.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
 }
-.padres-titulo{
+
+body {
+    margin: 0;
+    background: #f4f5f7;
+    font-family: "Inter", sans-serif;
+    color: #1f2937;
+}
+
+.pd-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 36px 16px;
+}
+
+.pd-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.pd-container h1 {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-size: 52px;
+    margin: 0;
+    font-weight: 800;
 }
 
-.card-padre{
-    border: 3px solid #1342dc;
-    border-radius: 14px;;
-    padding: 15px;
-    transition: all 0.2s;
-
-}
-
-.card-padre:hover{
-    transform: translateY(-4px);
-    background-color: aliceblue;
-}
-.docentes-titulo{
+.pd-subtitle {
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-.card-docente{
-    padding: 15px;
-    border: 3px solid #13b92c;
-    border-radius: 10px;
-    transition: all 0.2s;
+    color: #6b7280;
+    margin: 18px auto 40px;
+    max-width: 760px;
+    line-height: 1.7;
+    font-size: 17px;
 }
 
-.card-docente:hover{
-    transform: translateY(-4px);
-    background-color: #f0fdf4;;
+/* GRID */
+
+.pd-top-grid,
+.pd-bottom-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.pd-bottom-grid {
+    grid-template-columns: 1fr 2fr;
+}
+
+.pd-card {
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #e5e7eb;
+    padding: 24px;
+}
+
+.pd-card h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* MINI GRID */
+
+.mini-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.mini-card {
+    padding: 18px;
+    border-radius: 14px;
+}
+
+.mini-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+.mini-card.purple {
+    background: #efe7ff;
+}
+
+.mini-card.orange {
+    background: #ffe9d7;
+}
+
+.mini-card.green {
+    background: #dff5ef;
+}
+
+.mini-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* WIDE BOX */
+
+.wide-tip {
+    margin-top: 18px;
+    background: #dff5ef;
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.orange-bg {
+    background: #ffe9d7;
+}
+
+.wide-tip p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+/* TIPS */
+
+.tips-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.tip-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.tip-item svg {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.tip-item strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.tip-item p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .pd-top-grid,
+    .pd-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pd-container h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pd-container h1 {
+        font-size: 32px;
+    }
+
+    .pd-subtitle {
+        font-size: 15px;
+    }
+
+    .pd-card h2 {
+        font-size: 24px;
+    }
 }

@@ -1,125 +1,211 @@
+// Chat.jsx
+
 import { useEffect, useRef, useState } from "react";
 import Worker from "../mlc-worker.js?worker";
 import { useLocation } from "react-router-dom";
+import "../Styles/Chat.css";
+
+import {
+    MessageCircle,
+    Send,
+    X,
+    Bot,
+    ShieldCheck,
+} from "lucide-react";
 
 export default function Chat() {
-  const location = useLocation();
-  const workerRef = useRef(null);
+    const location = useLocation();
+    const workerRef = useRef(null);
 
-  const [progress, setProgress] = useState(0);
-  const [result, setResult] = useState("");
-  const [input, setInput] = useState("");
-  const [ready, setReady] = useState(false);
-  const [open, setOpen] = useState(false);
+    const [progress, setProgress] = useState(0);
+    const [messages, setMessages] = useState([
+        {
+            role: "bot",
+            content:
+                "¡Hola! Soy Marcelo 🤖. Puedo ayudarte con seguridad digital, privacidad y riesgos en internet.",
+        },
+    ]);
 
-  useEffect(() => {
-    const worker = new Worker();
-    workerRef.current = worker;
+    const [input, setInput] = useState("");
+    const [ready, setReady] = useState(false);
+    const [open, setOpen] = useState(false);
 
-    worker.onmessage = (event) => {
-      const { type, report, content } = event.data;
+    useEffect(() => {
+        const worker = new Worker();
+        workerRef.current = worker;
 
-      if (type === "progress" && report?.progress) {
-        setProgress(Math.round(report.progress * 100));
-      }
+        worker.onmessage = (event) => {
+            const { type, report, content } = event.data;
 
-      if (type === "ready") {
-        setResult((prev) => prev + "\n[Modelo listo]\n");
-        setReady(true);
-      }
+            if (type === "progress" && report?.progress) {
+                setProgress(Math.round(report.progress * 100));
+            }
 
-      if (type === "reply") {
-        setResult((prev) => prev + content);
-      }
+            if (type === "ready") {
+                setReady(true);
+
+                setMessages((prev) => [
+                    ...prev,
+                    {
+                        role: "bot",
+                        content: "El asistente ya está listo para ayudarte 🚀",
+                    },
+                ]);
+            }
+
+            if (type === "reply") {
+                setMessages((prev) => {
+                    const updated = [...prev];
+
+                    if (updated.length > 0 && updated[updated.length - 1].role === "bot") {
+                        updated[updated.length - 1] = {
+                            ...updated[updated.length - 1],
+                            content:
+                                updated[updated.length - 1].content + content,
+                        };
+
+                        return updated;
+                    }
+
+                    return [
+                        ...updated,
+                        {
+                            role: "bot",
+                            content,
+                        },
+                    ];
+                });
+            }
+        };
+
+        worker.postMessage({ type: "init" });
+
+        return () => worker.terminate();
+    }, []);
+
+    const sendMessage = () => {
+        if (!input.trim()) return;
+
+        const userMessage = input;
+
+        setMessages((prev) => [
+            ...prev,
+            {
+                role: "user",
+                content: userMessage,
+            },
+        ]);
+
+        workerRef.current.postMessage({
+            type: "chat",
+            data: {
+                messages: [
+                    {
+                        role: "system",
+                        content: `
+Sos Marcelo, un asistente especializado en seguridad online para niños y adolescentes.
+
+El usuario está actualmente en la sección:
+"${location.pathname}"
+
+Reglas:
+- Respondé de forma clara y amigable.
+- Explicá conceptos simples.
+- Da consejos prácticos.
+- Si preguntan dónde están, no muestres rutas.
+- Si la pregunta no tiene relación con seguridad online, privacidad, riesgos digitales o ciudadanía digital, respondé amablemente que solo podés ayudar en esos temas.
+            `,
+                    },
+                    {
+                        role: "user",
+                        content: userMessage,
+                    },
+                ],
+            },
+        });
+
+        setInput("");
     };
 
-    worker.postMessage({ type: "init" });
+    return (
+        <>
+            {/* BOTON FLOTANTE */}
+            <button
+                className={`chat-toggle ${open ? "hidden" : ""}`}
+                onClick={() => setOpen(true)}
+            >
+                <MessageCircle size={28} />
+            </button>
 
-    return () => worker.terminate();
-  }, []);
+            {/* CHAT */}
+            <div className={`chat-panel ${open ? "open" : ""}`}>
+                {/* HEADER */}
+                <div className="chat-header">
+                    <div className="chat-header-info">
+                        <div className="chat-avatar">
+                            <Bot size={22} />
+                        </div>
 
-  const sendMessage = () => {
-    if (!input.trim()) return;
+                        <div>
+                            <h3>Marcelo</h3>
 
-    setResult((prev) => prev + `\n👤: ${input}\n🤖: `);
+                            <p>
+                                <ShieldCheck size={14} />
+                                Asistente de seguridad digital
+                            </p>
+                        </div>
+                    </div>
 
-    //console.log(location.pathname);
+                    <button
+                        className="close-btn"
+                        onClick={() => setOpen(false)}
+                    >
+                        <X size={20} />
+                    </button>
+                </div>
 
-    workerRef.current.postMessage({
-      type: "chat",
-      data: {
-        messages: [
-          {
-            role: "system",
-            content:
-              `sos un asistente de seguridad online para niños y adolescentes llamado Marcelo... El usuario está actualmente en la sección: "${location.pathname}". Cuando te pregunten en que parte del sitio estan no muestres las rutas. Respondé siempre con consejos prácticos, ejemplos y recursos útiles relacionados a esa sección. Si el usuario hace una pregunta que no tiene que ver con seguridad online, respondé amablemente que solo podés ayudar con temas de seguridad online.`,
-          },
-          { role: "user", content: input },
-        ],
-      },
-    });
+                {/* PROGRESS */}
+                <div className="progress-container">
+                    <div
+                        className="progress-bar"
+                        style={{ width: `${progress}%` }}
+                    />
 
-    setInput("");
-  };
+                    <span>{ready ? "Modelo listo" : `Cargando ${progress}%`}</span>
+                </div>
 
-  return (
-    <>
-      <button
-        onClick={() => setOpen(!open)}
-        style={{
-          position: "fixed",
-          bottom: 20,
-          right: 20,
-          zIndex: 1000,
-        }}
-      >
-        💬
-      </button>
+                {/* MENSAJES */}
+                <div className="chat-messages">
+                    {messages.map((msg, index) => (
+                        <div
+                            key={index}
+                            className={`message ${msg.role}`}
+                        >
+                            {msg.content}
+                        </div>
+                    ))}
+                </div>
 
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          right: open ? 0 : "-350px",
-          width: 350,
-          height: "100%",
-          background: "white",
-          boxShadow: "-2px 0 5px rgba(0,0,0,0.2)",
-          padding: 15,
-          transition: "right 0.3s ease",
-          zIndex: 999,
-        }}
-      >
-        <h3>Marcelo 🤖</h3>
+                {/* INPUT */}
+                <div className="chat-input-area">
+                    <input
+                        type="text"
+                        value={input}
+                        placeholder="Preguntá algo..."
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={(e) =>
+                            e.key === "Enter" && sendMessage()
+                        }
+                    />
 
-        {/* progreso */}
-        <div style={{ background: "#eee", marginBottom: 10 }}>
-          <div
-            style={{
-              width: `${progress}%`,
-              height: 10,
-              background: "#4caf50",
-            }}
-          />
-        </div>
-
-        <textarea
-          value={result}
-          readOnly
-          style={{ width: "100%", height: "60%" }}
-        />
-
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Preguntá algo..."
-          style={{ width: "70%" }}
-        />
-
-        <button onClick={sendMessage} disabled={!ready}>
-          Enviar
-        </button>
-      </div>
-    </>
-  );
+                    <button
+                        onClick={sendMessage}
+                        disabled={!ready}
+                    >
+                        <Send size={18} />
+                    </button>
+                </div>
+            </div>
+        </>
+    );
 }
